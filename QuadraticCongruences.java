@@ -5,20 +5,27 @@ public class QuadraticCongruences{
         return alpha;
     }
 
-    public static int findInverse(int prime, int a){
-        int inverse = 0;
-        return inverse;
+    public static int[] FindSolutions(int prime, int a, int b, int c){
+        int[] solutions = new int[2];
+        return solutions;
     }
 
+    //**// tougher problems
     public static int[] EcludianAlgorithm(int a, int b){
         int[] result = new int[2];
         return result;
     }
 
-    public static int[] FindSolutions(int prime, int a, int b, int c){
-        int[] solutions = new int[2];
-        return solutions;
+    public static int findInverse(int prime, int a){
+        int inverse = 0;
+        return inverse;
     }
+
+    public static int fermatsLittleTheorem(int prime, int d){
+        int result = 0;
+        return result;
+    }
+    //**//
 //
     public static void main(String[] args) {
         
