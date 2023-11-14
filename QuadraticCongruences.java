@@ -11,12 +11,12 @@ public class QuadraticCongruences{
     }
 
     //**// tougher problems
-    public static int[] EcludianAlgorithm(int a, int b){
+    public static int[] EcludianAlgorithm(int a, int b){// Abdulaziz
         int[] result = new int[2];
         return result;
     }
 
-    public static int findInverse(int prime, int a){
+    public static int findInverse(int prime, int a){// Abdulaziz
         int inverse = 0;
         return inverse;
     }
