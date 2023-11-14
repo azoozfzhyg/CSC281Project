@@ -11,14 +11,22 @@ public class QuadraticCongruences{
     }
 
     //**// tougher problems
-    public static int[] EcludianAlgorithm(int a, int b){// Abdulaziz
-        int[] result = new int[2];
-        return result;
+    public static int ecludianAlgorithm(int a, int b){// Abdulaziz
+        if ( a % b == 0) {
+            return b;
+        }
+        else {
+            return ecludianAlgorithm(b, a % b);
+        }
     }
 
     public static int findInverse(int prime, int a){// Abdulaziz
         int inverse = 0;
         return inverse;
+    }
+        // the first index is the coefficient of a, the second is the coefficient of b
+    public static int[] findLinearCombination(int a, int b){
+
     }
 
     public static int fermatsLittleTheorem(int prime, int d){
