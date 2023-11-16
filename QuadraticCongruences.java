@@ -20,13 +20,14 @@ public class QuadraticCongruences{
         }
     }
 
-    public static int findInverse(int prime, int a){// Abdulaziz
+    public static int findInverse(int prime, int b){// Abdulaziz
         int inverse = 0;
         return inverse;
     }
         // the first index is the coefficient of a, the second is the coefficient of b
     public static int[] findLinearCombination(int a, int b){
-
+        int gcd = ecludianAlgorithm(a, b);
+        
     }
 
     public static int fermatsLittleTheorem(int prime, int d){
