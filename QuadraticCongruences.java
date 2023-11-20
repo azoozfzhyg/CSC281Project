@@ -56,12 +56,35 @@ public class QuadraticCongruences{
         Scanner input = newScanner(System.in);
         
         Ststem.out.print("Please write the value of a");
+        int a = input.nextInt();
 
-        Ststem.out.print("Please write the value of a");
+        Ststem.out.print("Please write the value of b");
+        int b = input.nextInt();
 
-        Ststem.out.print("Please write the value of a");
+        Ststem.out.print("Please write the value of c");
+        int c = input.nextInt();
 
-        Ststem.out.print("Please write the value of a");
+        Ststem.out.print("Please write the value of prime");
+        int  prime = input.nextInt();
+
+         if (a%prime = 0){
+
+         }
+         else{
+            if (){
+
+            }
+            else{
+                if(fermatsLittleTheorem == -1){
+                    System.out.print("We do not have a solution ");
+
+                }
+                else{
+
+                }
+            }
+
+         }
 
 
         
