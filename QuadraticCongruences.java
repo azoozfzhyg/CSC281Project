@@ -1,5 +1,7 @@
+import java.util.Scanner;
 public class QuadraticCongruences{
 // prone to change
+  
     public static int FindAlphaPrime(int prime, int d){
         int alpha = 0;
         return alpha;
@@ -51,6 +53,17 @@ public class QuadraticCongruences{
     //**//
 //
     public static void main(String[] args) {
+        Scanner input = newScanner(System.in);
+        
+        Ststem.out.print("Please write the value of a");
+
+        Ststem.out.print("Please write the value of a");
+
+        Ststem.out.print("Please write the value of a");
+
+        Ststem.out.print("Please write the value of a");
+
+
         
     }
 }
