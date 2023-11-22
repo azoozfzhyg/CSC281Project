@@ -4,15 +4,23 @@ public class QuadraticCongruences{
 
     public static int FindAlphaPrime(int prime, int d){ //Mohammed
         int k = 0;
-        k = (int) Math.sqrt(d + prime * k);
-        while((k - (int) (Math.floor(Math.sqrt(d + prime * k)))) == 0)
+        double alphaprime = (d + prime * k);
+        while((Math.sqrt(alphaprime) - ((int) Math.sqrt(alphaprime))) != 0){
             k += 1;
-        return (int) Math.pow(d + prime*k, 1/2);
+            alphaprime = (d + prime * k);
+        }
+        return (int) Math.sqrt(alphaprime);
     }
 
     public static void FindSolutions(int prime, int b, int Inverse, int alphaprime, int []solutions){ //Mohammed
-    	solutions[0] = (((((-1) * b) % prime) + (alphaprime % prime)) * Inverse) % prime;
-    	solutions[1] = (((((-1) * b) % prime) - (alphaprime % prime)) * Inverse) % prime;
+    	solutions[0] = ((b + (alphaprime)) * Inverse) % prime;
+        if(solutions[0] < 0){
+            solutions[0] += prime;
+        }
+    	solutions[1] = ((b - (alphaprime)) * Inverse) % prime;
+        if(solutions[1] < 0){
+            solutions[1] += prime;
+        }
         return;
     }
 
@@ -98,13 +106,13 @@ public class QuadraticCongruences{
                 System.out.print("x = {" + x +"}");
             }
             else if( d % prime !=0 ){
-                if(fermatsLittleTheorem(prime,d ) ==  (-1)){
+                if(fermatsLittleTheorem(prime,d ) == (-1)){
                     System.out.print("NO SOLUTION");
                 }
                 else{
-                    alphaprime = FindAlphaPrime(prime,d);
+                    alphaprime = FindAlphaPrime(prime,d) % prime;
                     Inverse =  findInverse (prime, (2 * a) % prime);
-                    FindSolutions(prime, b, Inverse, alphaprime, solutions);
+                    FindSolutions(prime, -b % prime, Inverse, alphaprime, solutions);
                     System.out.print("x ={" + solutions[0] + "," + solutions[1] + "}");
                 }
             }
