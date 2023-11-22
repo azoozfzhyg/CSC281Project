@@ -4,7 +4,8 @@ public class QuadraticCongruences{
 
     public static int FindAlphaPrime(int prime, int d){ //Mohammed
         int k = 0;
-        while(Math.floor(Math.sqrt(d + prime * k)) != 0)
+        k = (int) Math.sqrt(d + prime * k);
+        while((k - (int) (Math.floor(Math.sqrt(d + prime * k)))) == 0)
             k += 1;
         return (int) Math.pow(d + prime*k, 1/2);
     }
