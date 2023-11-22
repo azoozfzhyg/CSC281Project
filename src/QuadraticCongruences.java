@@ -2,13 +2,17 @@ import java.util.Scanner;
 public class QuadraticCongruences{
 // prone to change
 
-    public static int FindAlphaPrime(int prime, int d){
-        int alpha = 0;
-        return alpha;
+    public static int FindAlphaPrime(int prime, int d){ //Mohammed
+        int k = 0;
+        while(Math.floor(Math.sqrt(d + prime * k)) != 0)
+        	k += 1;
+        return (int) Math.pow(d + prime*k, 1/2);
     }
 
-    public static void FindSolutions(int prime, int b, int Inverse, int alphaprime, int []solutions){
-        return;
+    public static void FindSolutions(int prime, int b, int Inverse, int alphaprime, int []solutions){ //Mohammed
+    	solutions[0] = (((((-1) * b) % prime) + (alphaprime % prime)) * Inverse) % prime;
+    	solutions[1] = (((((-1) * b) % prime) - (alphaprime % prime)) * Inverse) % prime;
+    	return;
     }
 
     //**// tougher problems
@@ -57,8 +61,8 @@ public class QuadraticCongruences{
         return true;
     }
         
-    public static int fermatsLittleTheorem(int prime, int d){
-        int result = 0;
+    public static int fermatsLittleTheorem(int prime, int d){ //Mohammed
+        int result = (int) (Math.pow(d, (prime - 1)/2) % prime);
         return result;
     }
     //**//
@@ -89,7 +93,7 @@ public class QuadraticCongruences{
                 b = ((-1) * b) % prime;
                 a = (2 * a) % prime;
                 Inverse = findInverse(prime, a);
-                x= ((-b * Inverse) % prime);
+                x = ((-b * Inverse) % prime);
                 System.out.print("x = {" + x +"}");
             }
             else if( prime % d !=0 ){
