@@ -86,9 +86,9 @@ public class QuadraticCongruences{
         //
         if (a % prime == 0 && prime%2==1 && isprime(prime) == true){
             if (prime % d ==0){
-                b = b%prime;
-                a = 2*a%prime;
-                Inverse = findInverse(prime, 2*a);
+                b = ((-1) * b) % prime;
+                a = (2 * a) % prime;
+                Inverse = findInverse(prime, a);
                 x= ((-b * Inverse) % prime);
                 System.out.print("x = {" + x +"}");
             }
@@ -98,7 +98,7 @@ public class QuadraticCongruences{
                 }
                 else{
                     alphaprime = FindAlphaPrime(prime,d);
-                    Inverse =  findInverse (prime, 2*a);
+                    Inverse =  findInverse (prime, (2 * a) % prime);
                     FindSolutions(prime, b, Inverse, alphaprime, solutions);
                     System.out.print("x ={" + solutions[0] + "," + solutions[1] + "}");
                 }
