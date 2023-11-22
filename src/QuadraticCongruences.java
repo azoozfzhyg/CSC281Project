@@ -79,27 +79,28 @@ public class QuadraticCongruences{
         int  prime = input.nextInt();
             
         int d = ( (int)Math.pow(b,2) ) - (4 * a * c);
-        int y;
         int x;
         int alphaprime;
         int Inverse;
         int [] solutions = new int [2];
-
+        //
         if (a % prime == 0 && prime%2==1 && isprime(prime) == true){
             if (prime % d ==0){
-                x= (-b / (2 * a));
+                b = b%prime;
+                a = 2*a%prime;
+                Inverse = findInverse(prime, 2*a);
+                x= ((-b * Inverse) % prime);
                 System.out.print("x = {" + x +"}");
             }
             else if( prime % d !=0 ){
-                if(fermatsLittleTheorem(prime,d ) == -1){
+                if(fermatsLittleTheorem(prime,d ) == (prime - 1)){
                     System.out.print("NO SOLUTION");
                 }
                 else{
                     alphaprime = FindAlphaPrime(prime,d);
                     Inverse =  findInverse (prime, 2*a);
                     FindSolutions(prime, b, Inverse, alphaprime, solutions);
-                    System.out.print("Solution 1= " + solutions[0]);
-                    System.out.print("Solution 2= " + solutions[1]);
+                    System.out.print("x ={" + solutions[0] + "," + solutions[1] + "}");
                 }
             }
         }
