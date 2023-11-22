@@ -5,14 +5,14 @@ public class QuadraticCongruences{
     public static int FindAlphaPrime(int prime, int d){ //Mohammed
         int k = 0;
         while(Math.floor(Math.sqrt(d + prime * k)) != 0)
-        	k += 1;
+            k += 1;
         return (int) Math.pow(d + prime*k, 1/2);
     }
 
     public static void FindSolutions(int prime, int b, int Inverse, int alphaprime, int []solutions){ //Mohammed
     	solutions[0] = (((((-1) * b) % prime) + (alphaprime % prime)) * Inverse) % prime;
     	solutions[1] = (((((-1) * b) % prime) - (alphaprime % prime)) * Inverse) % prime;
-    	return;
+        return;
     }
 
     //**// tougher problems
@@ -82,22 +82,22 @@ public class QuadraticCongruences{
         System.out.print("Please write the value of prime: ");
         int  prime = input.nextInt();
             
-        int d = ( (int)Math.pow(b,2) ) - (4 * a * c);
+        int d = (b*b) - ((((4) * a) * c));
         int x;
         int alphaprime;
         int Inverse;
         int [] solutions = new int [2];
         //
-        if (a % prime == 0 && prime%2==1 && isprime(prime) == true){
-            if (prime % d ==0){
+        if (a % prime != 0 && prime%2==1 && isprime(prime) == true){
+            if (d % prime ==0){
                 b = ((-1) * b) % prime;
                 a = (2 * a) % prime;
                 Inverse = findInverse(prime, a);
                 x = ((-b * Inverse) % prime);
                 System.out.print("x = {" + x +"}");
             }
-            else if( prime % d !=0 ){
-                if(fermatsLittleTheorem(prime,d ) == (prime - 1)){
+            else if( d % prime !=0 ){
+                if(fermatsLittleTheorem(prime,d ) ==  (-1)){
                     System.out.print("NO SOLUTION");
                 }
                 else{
