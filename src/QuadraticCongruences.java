@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class QuadraticCongruences{
 // prone to change
 
-    public static int FindAlphaPrime(int prime, int d){ //Mohammed
+    public static int FindAlphaPrime(int prime, int d){
         int k = 0;
         double alphaprime = (d + prime * k);
         while((Math.sqrt(alphaprime) - ((int) Math.sqrt(alphaprime))) != 0){
@@ -12,7 +12,7 @@ public class QuadraticCongruences{
         return (int) Math.sqrt(alphaprime);
     }
 
-    public static void FindSolutions(int prime, int b, int Inverse, int alphaprime, int []solutions){ //Mohammed
+    public static void FindSolutions(int prime, int b, int Inverse, int alphaprime, int []solutions){
     	solutions[0] = ((b + (alphaprime)) * Inverse) % prime;
         if(solutions[0] < 0){
             solutions[0] += prime;
@@ -24,8 +24,7 @@ public class QuadraticCongruences{
         return;
     }
 
-    //**// tougher problems
-    public static int ecludianAlgorithm(int a, int b){// Abdulaziz
+    public static int ecludianAlgorithm(int a, int b){
         if ( a % b == 0) {
             return b;
         }
@@ -34,14 +33,14 @@ public class QuadraticCongruences{
         }
     }
 
-    public static int findInverse(int prime, int b) {// Abdulaziz
+    public static int findInverse(int prime, int b) {
         int factors[] = new int[2];
         findLinearCombination(prime, b, factors);
         return factors[1];
     }
 
     // the first index is the coefficient of a, the second is the coefficient of b
-    public static void findLinearCombination(int a, int b, int[] factors) {// Abdulaziz
+    public static void findLinearCombination(int a, int b, int[] factors) {
         if (a % b == 0) {
             return;
         }
@@ -70,13 +69,12 @@ public class QuadraticCongruences{
         return true;
     }
         
-    public static int fermatsLittleTheorem(int prime, int d){ //Mohammed
+    public static int fermatsLittleTheorem(int prime, int d){
         int result = (int) (Math.pow(d, (prime - 1)/2) % prime);
         return result;
     }
-    //**//
-//
-    public static void main(String[] args) { //Faris
+
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
         System.out.print("Please write the value of a: ");
